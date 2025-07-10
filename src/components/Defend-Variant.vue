@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{ name }}</h2>
+    <h4>{{ name }}</h4>
   </div>
 </template>
 
@@ -12,7 +12,7 @@ defineProps({
 
 <style scoped>
 div {
-  width: 400px;
+  width: 150px;
   height: 100px;
   border: 2px dashed #888;
   border-radius: 8px;
