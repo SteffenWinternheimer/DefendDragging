@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import DefendMechanism from './components/Defend-Mechanism.vue'
 import AttackVariant from './components/Attack-Variant.vue'
 import DefendSocket from './components/Defend-Socket.vue'
+import DefendVariant from './components/Defend-Variant.vue'
 const currentAttackRef = ref('')
 </script>
 
@@ -14,8 +15,20 @@ const currentAttackRef = ref('')
     </section>
 
     <section>
-      <h1>🪟 Defend Socket</h1>
+      <h1>🛡️ Defend Socket</h1>
       <DefendSocket :name="'Drop mechanism here'" :currentAttack="currentAttackRef" />
+    </section>
+
+    <section style="margin-top: 150px">
+      <h1>🔒 Cyberattack Targets</h1>
+      <div class="mechanism-pool">
+        <DefendVariant name="User Accounts" />
+        <DefendVariant name="Licensing Systems" />
+        <DefendVariant name="Identities" />
+        <DefendVariant name="Data" />
+        <DefendVariant name="Web Session" />
+        <DefendVariant name="Network Integrity" />
+      </div>
     </section>
 
     <section>
