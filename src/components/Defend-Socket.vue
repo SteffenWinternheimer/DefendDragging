@@ -6,6 +6,7 @@ const props = defineProps({
   currentAttack: String,
 })
 
+const emits = defineEmits(['increment'])
 const droppedMechanism = ref(null)
 
 const matchMap = {
@@ -21,6 +22,10 @@ function handleDrop(event) {
   const data = event.dataTransfer.getData('mechanism')
   if (data) {
     droppedMechanism.value = data
+  }
+  const expected = matchMap[props.currentAttack]
+  if (droppedMechanism.value === expected) {
+    emits('increment', 1)
   }
 }
 

@@ -5,6 +5,10 @@ import AttackVariant from './components/Attack-Variant.vue'
 import DefendSocket from './components/Defend-Socket.vue'
 import DefendVariant from './components/Defend-Variant.vue'
 const currentAttackRef = ref('')
+const defendedAttacks = ref(0)
+const incrementDefendedAttacks = (value) => {
+  defendedAttacks.value += value
+}
 </script>
 
 <template>
@@ -16,7 +20,11 @@ const currentAttackRef = ref('')
 
     <section>
       <h1>🛡️ Defend Socket</h1>
-      <DefendSocket :name="'Drop mechanism here'" :currentAttack="currentAttackRef" />
+      <DefendSocket
+        :name="'Drop mechanism here'"
+        :currentAttack="currentAttackRef"
+        @increment="incrementDefendedAttacks"
+      />
     </section>
 
     <section style="margin-top: 150px">
@@ -40,6 +48,10 @@ const currentAttackRef = ref('')
         <DefendMechanism name="Web Application Firewall" />
         <DefendMechanism name="Network Segmentation" />
       </div>
+    </section>
+
+    <section>
+      <h1>✅ Successfully Defended: {{ defendedAttacks }}</h1>
     </section>
   </main>
 </template>
