@@ -6,8 +6,14 @@ import DefendSocket from './components/Defend-Socket.vue'
 import DefendVariant from './components/Defend-Variant.vue'
 const currentAttackRef = ref('')
 const defendedAttacks = ref(0)
+const lastIncorrectDrop = ref(null)
+
 const incrementDefendedAttacks = (value) => {
   defendedAttacks.value += value
+}
+
+function handleIncorrectDrop(data) {
+  lastIncorrectDrop.value = data
 }
 </script>
 
@@ -24,18 +30,26 @@ const incrementDefendedAttacks = (value) => {
         :name="'Drop mechanism here'"
         :currentAttack="currentAttackRef"
         @increment="incrementDefendedAttacks"
+        @incorrect="(data) => handleIncorrectDrop(data)"
       />
     </section>
 
     <section style="margin-top: 150px">
       <h1>🔒 Cyberattack Targets</h1>
       <div class="mechanism-pool">
-        <DefendVariant name="User Accounts" />
-        <DefendVariant name="Licensing Systems" />
-        <DefendVariant name="Identities" />
-        <DefendVariant name="Data" />
-        <DefendVariant name="Web Session" />
-        <DefendVariant name="Network Integrity" />
+        <DefendVariant
+          v-for="name in [
+            'User Accounts',
+            'Licensing Systems',
+            'Identities',
+            'Data',
+            'Web Session',
+            'Network Integrity',
+          ]"
+          :key="name"
+          :name="name"
+          :targetHit="lastIncorrectDrop?.target === name"
+        />
       </div>
     </section>
 

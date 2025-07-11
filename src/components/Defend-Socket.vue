@@ -6,7 +6,7 @@ const props = defineProps({
   currentAttack: String,
 })
 
-const emits = defineEmits(['increment'])
+const emits = defineEmits(['increment', 'incorrect'])
 const droppedMechanism = ref(null)
 
 const matchMap = {
@@ -16,6 +16,15 @@ const matchMap = {
   'SQL Injection': 'Web Application Firewall',
   'Cross-Site Scripting (XSS)': 'Web Application Firewall',
   'Denial of Service': 'Network Segmentation',
+}
+
+const targetMap = {
+  'Brute Force Attack': 'User Accounts',
+  'Reverse Engineering': 'Licensing Systems',
+  'Phishing Attack': 'Identities',
+  'SQL Injection': 'Data',
+  'Cross-Site Scripting (XSS)': 'Web Session',
+  'Denial of Service': 'Network Integrity',
 }
 
 function handleDrop(event) {
@@ -28,6 +37,12 @@ function handleDrop(event) {
     emits('increment', 1)
     playSound('Success')
   } else {
+    emits('incorrect', {
+      dropped: droppedMechanism.value,
+      expected,
+      attack: props.currentAttack,
+      target: targetMap[props.currentAttack],
+    })
     playSound('Error')
   }
 }
