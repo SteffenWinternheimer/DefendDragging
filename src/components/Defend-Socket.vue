@@ -88,7 +88,7 @@ const socketColor = computed(() => {
   font-size: 1.1rem;
   color: white;
   border: 2px dashed rgba(255, 255, 255, 0.2);
-  background: linear-gradient(to right, #2c3e50, #4ca1af); /* neutral state */
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
   transition:
     background 0.4s ease,
     box-shadow 0.3s ease;

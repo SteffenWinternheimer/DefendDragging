@@ -21,11 +21,10 @@ watch(
     if (newVal) {
       isGreyedOut.value = true
 
-      // Flash-Effekt starten
       isFlashing.value = true
       setTimeout(() => {
         isFlashing.value = false
-      }, 300) // Dauer des Flashs in ms
+      }, 300)
     }
   },
 )
@@ -45,8 +44,8 @@ div {
   font-weight: bold;
 
   display: flex;
-  justify-content: center; /* horizontal zentrieren */
-  align-items: center; /* vertikal zentrieren */
+  justify-content: center;
+  align-items: center;
 
   transition:
     background-color 0.3s,
@@ -59,7 +58,6 @@ div {
   box-shadow: none;
 }
 
-/* Flash-Animation */
 .flash {
   animation: flashHighlight 0.3s ease forwards;
 }
@@ -72,8 +70,8 @@ div {
   }
   100% {
     box-shadow: none;
-    background-color: inherit; /* Hintergrund bleibt erhalten */
-    color: inherit; /* Schriftfarbe zurück */
+    background-color: inherit;
+    color: inherit;
   }
 }
 </style>

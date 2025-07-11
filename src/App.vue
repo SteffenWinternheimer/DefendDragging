@@ -8,6 +8,7 @@ const currentAttackRef = ref('')
 const defendedAttacks = ref(0)
 const lastIncorrectDrop = ref(null)
 
+//Successfully defended attacks counter
 const incrementDefendedAttacks = (value) => {
   defendedAttacks.value += value
 }
