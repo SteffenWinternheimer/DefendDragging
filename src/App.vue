@@ -1,9 +1,9 @@
 <script setup>
 import { ref } from 'vue'
-import DefendMechanism from './components/Defend-Mechanism.vue'
+import DefenseMechanism from './components/Defense-Mechanism.vue'
 import AttackVariant from './components/Attack-Variant.vue'
-import DefendSocket from './components/Defend-Socket.vue'
-import DefendVariant from './components/Defend-Variant.vue'
+import DefenseSocket from './components/Defense-Socket.vue'
+import DefenseVariant from './components/Defense-Variant.vue'
 const currentAttackRef = ref('')
 const defendedAttacks = ref(0)
 const lastIncorrectDrop = ref(null)
@@ -26,8 +26,8 @@ function handleIncorrectDrop(data) {
     </section>
 
     <section>
-      <h1>🛡️ Defend Socket</h1>
-      <DefendSocket
+      <h1>🛡️ Defense Socket</h1>
+      <DefenseSocket
         :name="'Drop mechanism here'"
         :currentAttack="currentAttackRef"
         @increment="incrementDefendedAttacks"
@@ -38,7 +38,7 @@ function handleIncorrectDrop(data) {
     <section style="margin-top: 80px">
       <h1>🔒 Cyberattack Targets</h1>
       <div class="mechanism-pool">
-        <DefendVariant
+        <DefenseVariant
           v-for="name in [
             'User Accounts',
             'Licensing Systems',
@@ -57,11 +57,11 @@ function handleIncorrectDrop(data) {
     <section>
       <h1>🧰 Mechanisms</h1>
       <div class="mechanism-pool">
-        <DefendMechanism name="Encryption" />
-        <DefendMechanism name="Authentication" />
-        <DefendMechanism name="Authorization" />
-        <DefendMechanism name="Web Application Firewall" />
-        <DefendMechanism name="Network Segmentation" />
+        <DefenseMechanism name="Encryption" />
+        <DefenseMechanism name="Authentication" />
+        <DefenseMechanism name="Authorization" />
+        <DefenseMechanism name="Web Application Firewall" />
+        <DefenseMechanism name="Network Segmentation" />
       </div>
     </section>
 
