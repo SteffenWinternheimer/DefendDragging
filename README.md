@@ -24,5 +24,5 @@ In regelmäßigen Abständen erscheinen zufällige Angriffe (Attack Setup) im ob
 
 - Basierend auf dem Stand des Projektes könnte es um weitere Angriffe mit dazugehörigen Abwehrmechanismen und Ziele erweitert werden.
 - Die Anzahl der Defend Sockets könnte erhöht werden, damit bei einem entsprechenden Angriff mehrere (passende) Abwehrmechanismen eingesetzt werden. Dies könnte den Schwierigkeitsgrad über den Verlauf erhöhen.
-- Wenn der Angriff wechselt und der Spieler bis dahin keinen Mechanismus eingesetzt hat, würde der Angriff erfolgreich sein. Dies würde zum einem den Schwierigkeitsgrad erhöhen und zum Anderen die Realität näher widerspiegeln, da bei einem Angriff Zeit ein wichtiger Faktor ist.
+- Wenn der Angriff wechselt und der Spieler bis zu einer vorgegebenen Zeit keinen Mechanismus eingesetzt hat, würde der Angriff erfolgreich sein. Dies würde zum einem den Schwierigkeitsgrad erhöhen und zum Anderen die Realität näher widerspiegeln, da bei einem Angriff Zeit ein wichtiger Faktor ist.
 - Beim Einsetzen eines Mechanismus (egal ob dieser korrekt ist oder nicht) könnte eine Informationsblase daneben erscheinen, um im Detail zu beschreiben, wie der Angriff mit diesem Mechanismus abgewehrt werden kann um die Wissensvermittlung zusätzlich zu erhöhen.
