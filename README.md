@@ -11,6 +11,7 @@ In regelmäßigen Abständen erscheinen zufällige Angriffe (Attack Setup) im ob
 - Lade das Projekt herunter
 - Öffne die bash oder eine eine vergleichbare CLI
 - Gehe zum verzeichnis 'dist'
+- (Optional) Falls serve nicht vorhanden, bitte folgenden Befehl ausführen: npm install -g serve
 - Führe folgenden Befehl aus: serve -s .
 - Gib eine der angezeigten Adressen in deinem Browser ein
 - Viel Spaß!
