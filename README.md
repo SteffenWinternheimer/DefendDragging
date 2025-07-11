@@ -1,6 +1,6 @@
 # Übersicht
 
-Defend Dragger ist kein kurzes Minispiel für den zum Thema IT-Sicherheit. Ziel des Spiels ist es so viele Angriffe wie möglich abzuwehren ohne dabei komprommitiert zu werden.
+Defend Dragger ist kein kurzes Minispiel zum Thema IT-Sicherheit. Ziel des Spiels ist es so viele Angriffe wie möglich abzuwehren ohne dabei komprommitiert zu werden.
 
 ## Wie wird gespielt
 
