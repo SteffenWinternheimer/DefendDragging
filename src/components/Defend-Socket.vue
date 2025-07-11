@@ -26,6 +26,19 @@ function handleDrop(event) {
   const expected = matchMap[props.currentAttack]
   if (droppedMechanism.value === expected) {
     emits('increment', 1)
+    playSound('Success')
+  } else {
+    playSound('Error')
+  }
+}
+
+function playSound(soundType) {
+  if (soundType === 'Error') {
+    const audio = new Audio('/sounds/error.wav')
+    audio.play()
+  } else {
+    const audio = new Audio('/sounds/success.mp3')
+    audio.play()
   }
 }
 
