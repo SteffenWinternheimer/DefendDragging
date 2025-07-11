@@ -48,13 +48,9 @@ function handleDrop(event) {
 }
 
 function playSound(soundType) {
-  if (soundType === 'Error') {
-    const audio = new Audio('/sounds/error.wav')
-    audio.play()
-  } else {
-    const audio = new Audio('/sounds/success.mp3')
-    audio.play()
-  }
+  const file = soundType === 'Error' ? '/sounds/error.wav' : '/sounds/success.mp3'
+  const audio = new Audio(file)
+  audio.play()
 }
 
 function allowDrop(event) {
@@ -69,35 +65,43 @@ watch(
 )
 
 const socketColor = computed(() => {
-  if (!droppedMechanism.value) return 'gray'
-
   const expected = matchMap[props.currentAttack]
-  if (!expected) return 'gray'
-
-  return droppedMechanism.value === expected ? 'green' : 'red'
+  if (!droppedMechanism.value || !expected) return 'neutral'
+  return droppedMechanism.value === expected ? 'success' : 'error'
 })
 </script>
 
 <template>
-  <div
-    class="socket"
-    :style="{ backgroundColor: socketColor }"
-    @dragover="allowDrop"
-    @drop="handleDrop"
-  >
+  <div class="socket" :class="socketColor" @dragover="allowDrop" @drop="handleDrop">
     <span>{{ droppedMechanism || name }}</span>
   </div>
 </template>
 
 <style scoped>
 .socket {
-  padding: 1rem;
+  padding: 1.2rem;
   min-width: 250px;
   min-height: 60px;
-  border: 2px dashed #999;
-  border-radius: 10px;
+  border-radius: 12px;
   text-align: center;
-  transition: background-color 0.3s;
-  color: #d6d6d6;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: white;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  background: linear-gradient(to right, #2c3e50, #4ca1af); /* neutral state */
+  transition:
+    background 0.4s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+.socket.success {
+  background: linear-gradient(to right, #00c853, #64dd17);
+  box-shadow: 0 0 12px rgba(0, 255, 100, 0.6);
+}
+
+.socket.error {
+  background: linear-gradient(to right, #d32f2f, #ff5252);
+  box-shadow: 0 0 12px rgba(255, 50, 50, 0.6);
 }
 </style>

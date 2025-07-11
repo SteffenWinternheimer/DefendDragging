@@ -33,23 +33,49 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="attack">
-    <p><strong>Current Attack:</strong> {{ currentAttack }}</p>
+  <div class="attack-box">
+    <p class="label">🚨 Cyberattack Incoming</p>
+    <p class="attack-name">{{ currentAttack }}</p>
   </div>
 </template>
 
 <style scoped>
-.attack {
-  background-color: #ff0000;
-  padding: 1rem;
-  border: 2px dashed #aaa;
-  border-radius: 8px;
+.attack-box {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #ff1e56, #ff6a00);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
   text-align: center;
-  min-width: 250px;
+  animation: pulse 2s infinite;
+  min-width: 300px;
+  max-width: 400px;
+  color: white;
+  transition: all 0.3s ease;
 }
-p {
-  margin: 0;
-  color: #d6d6d6;
+
+.label {
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.attack-name {
+  font-size: 1.3rem;
   font-weight: bold;
+  text-shadow: 0 0 6px #000;
+  transition: all 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  }
 }
 </style>

@@ -39,28 +39,41 @@ div {
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
-  background: #09871b;
+  background: linear-gradient(to right, #00963e, #64dd17);
+  box-shadow: 0 0 12px rgba(0, 255, 100, 0.6);
+  color: white;
+  font-weight: bold;
 
   display: flex;
   justify-content: center; /* horizontal zentrieren */
   align-items: center; /* vertikal zentrieren */
+
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .greyed {
   background: #888;
+  color: #eee;
+  box-shadow: none;
 }
+
+/* Flash-Animation */
 .flash {
-  animation: flashHighlight 0.3s;
+  animation: flashHighlight 0.3s ease forwards;
 }
 
 @keyframes flashHighlight {
   0% {
-    box-shadow: 0 0 10px 5px #ffd700;
+    box-shadow: 0 0 15px 8px #ffd700;
     background-color: #ffd700;
-    color: black;
+    color: #888;
   }
   100% {
     box-shadow: none;
+    background-color: inherit; /* Hintergrund bleibt erhalten */
+    color: inherit; /* Schriftfarbe zurück */
   }
 }
 </style>

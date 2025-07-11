@@ -34,7 +34,7 @@ function handleIncorrectDrop(data) {
       />
     </section>
 
-    <section style="margin-top: 150px">
+    <section style="margin-top: 80px">
       <h1>🔒 Cyberattack Targets</h1>
       <div class="mechanism-pool">
         <DefendVariant
